@@ -72,9 +72,9 @@ gulp.task 'sprites', ->
     imgName: 'sprite.png'
     imgPath: '../../dist/images/build/sprite.png'
     cssName: 'sprites.styl'
-#    retinaSrcFilter: ['assets/images/sprites/*@2x.png']
-#    retinaImgName: 'sprite@2x.png'
-#    retinaImgPath: '../../dist/images/build/sprite@2x.png'
+    retinaSrcFilter: ['assets/images/sprites/*@2x.png']
+    retinaImgName: 'sprite@2x.png'
+    retinaImgPath: '../../dist/images/build/sprite@2x.png'
   ))
 
   spriteData.img.pipe gulp.dest('dist/images/build/')
