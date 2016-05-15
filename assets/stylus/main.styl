@@ -1,0 +1,88 @@
+/** =============	GLOBAL CONFIGURATION AND DEPENDENCIES	============= */
+
+@charset "UTF-8";
+
+// DEPENDNECIES
+flex-version = flex
+support-for-ie = false
+vendor-prefixes = official
+@import nib
+
+// ASSETS
+@import "fonts"
+//@import "elements/sprites"
+
+// GLOBAL CONFIGURATION
+// @lost flexbox flex
+// body
+//     lost-utility edit
+
+/** ============= 	GRID CONFIGURATION	============= */
+
+// BREAKPOINTS:
+
+// MOBILE
+// $grid-sm = 480px
+$grid-sm = 680px
+// TABLET
+// $grid-md = 769px
+$grid-md = 1023px
+// SMALL DESKTOP
+$grid-lg = 1200px
+// LARGE DESKTOP
+
+// DESKTOP SCREENS
+$height-13in = 960px // typical viewport height for 13 inch macbooks
+
+height-below($height)
+  @media screen and (max-height: $height)
+    {block}
+
+height-above($height)
+  $height = $height + 1px
+  @media screen and (min-height: $height)
+    {block}
+
+screen-13in()
+  @media screen and (max-height: $height-13in) and (min-width: $grid-lg)
+    {block}
+
+// RUPTURE GRID BREAKPOINTS
+rupture.mobile-cutoff = $grid-sm
+rupture.desktop-cutoff = $grid-md
+rupture.hd-cutoff = $grid-lg
+
+// aliases for grid
+$mobile = 0
+$tablet = $grid-sm
+$desktop = $grid-md
+$hd = $grid-lg
+
+/** SET THE ORDER OF MEDIA QUERIES */
+.dummy-selector
+  +above($mobile)
+    background transparent
+  +above($tablet)
+    background transparent
+  +above($desktop)
+    background transparent
+  +above($hd)
+    background transparent
+
+/** =============   RESET  ============= */
+
+global-reset()
+
+/** =============   VARIABLES AND MIXINS  ============= */
+
+@import "variables"
+@import "mixins"
+//
+///** =============   COMMON STYLES  ============= */
+//
+@import "global"
+@import "vendor"
+@import "elements"
+@import "layout"
+@import "common"
+@import "components"

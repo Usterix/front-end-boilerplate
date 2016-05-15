@@ -1,0 +1,54 @@
+*
+  lost-utility edit
+
+.container
+  clearfix()
+  width 100%
+  margin 0 auto
+  display block
+  overflow hidden
+  max-width auto
+  +above($mobile)
+    max-width $grid-sm - 40px
+  +above($desktop)
+    max-width $grid-md - 40px
+  +above($hd)
+    max-width 1140px
+
+.full-width-column
+  +mobile()
+    lost-column 1 1
+  +tablet()
+    lost-column 1 1
+  +desktop()
+    lost-column 1 1
+  +hd()
+    lost-column 1 1
+
+.primary-column
+  outline()
+  transition width .15s ease-in-out
+  +mobile()
+    lost-column 1 1
+  +tablet()
+    lost-column 1 1
+  +desktop()
+    lost-column 8.09 / 12 2
+  +hd()
+    lost-column 8.615 / 12 2
+
+.secondary-column
+  outline()
+  transition width .15s ease-in-out
+  +mobile()
+    lost-column 1 1
+    .home &,
+    .single &
+      display none
+  +tablet()
+    lost-column 1 1
+  +desktop()
+    lost-column 3.91 / 12 2
+  +hd()
+    lost-column 3.385 / 12 2
+
